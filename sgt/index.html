@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="script.js"></script>
+    <meta name="viewport" content="initial-scale=1">
+    <title>Student Grade Table</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-xs-12 col-md-12 page-header">
+        <!-- only show this element when the isnt on mobile -->
+        <h1 class="hidden-xs">Student Grade Table
+            <small class="pull-right">Grade Average : <span class="avgGrade label label-default">0</span></small>
+        </h1>
+        <!-- only show this element when the user gets to a mobile version -->
+        <h3 class="hidden-sm hidden-md hidden-lg hidden-xl">Student Grade Table
+            <small class="pull-right">Grade Average : <span class="avgGrade label label-default">0</span></small>
+        </h3>
+    </div>
+    <div class="student-add-form col-xs-12 col-sm-3 pull-right">
+        <h4>Add Student</h4>
+        <div class="input-group form-group" id="nameInputGroup">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-user"></span>
+            </span>
+            <input type="text" class="form-control form-success" name="studentName" id="studentName" placeholder="Name">
+        </div>
+        <div class="input-group form-group" id="courseInputGroup">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-list-alt"></span>
+            </span>
+            <input type="text" class="form-control" name="course" id="course"
+                   placeholder="Course">
+        </div>
+        <div class="input-group form-group" id="gradeInputGroup">
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-education"></span>
+            </span>
+            <input type="number" class="form-control" name="studentGrade" id="studentGrade"
+                   placeholder="Grade" onchange="setTwoNumberDecimal(this)" min=0 max=100>
+        </div>
+        <button type="button" class="add_button btn btn-success" onclick="">Add</button>
+        <button type="button" class="cancel_button btn btn-default" onclick="">Cancel</button>
+    </div>
+    <div class='gap col-xs-12 hidden-sm hidden-md hidden-lg'></div>
+    <div class="student-list-container container col-xs-12 col-sm-9">
+        <table class="student-list table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Grade</th>
+                <th>Operations</th>
+            </tr>
+            </thead>
+            <tbody>
+                <!--New rows get added here.-->
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
